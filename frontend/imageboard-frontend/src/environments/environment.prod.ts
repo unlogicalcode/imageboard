@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: false,
+  appVersion: {
+    major: 0,
+    minor: 0,
+    fix: 1
+  }
 };

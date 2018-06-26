@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+	<span>ImageBoard {{getDisplayVersion()}}</span>
+	<span class="fill-empty-space"></span>
+	<span>
+		<mat-menu #appMenu="matMenu">
+			<button mat-menu-item>Settings</button>
+			<button mat-menu-item>Help</button>
+		</mat-menu>
+		<button mat-icon-button [matMenuTriggerFor]="appMenu">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+	</span>
+</mat-toolbar>
