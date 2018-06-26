@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appVersion: {
     major: 0,
-    minor: 0,
+    minor: 1,
     fix: 1
   }
 };
