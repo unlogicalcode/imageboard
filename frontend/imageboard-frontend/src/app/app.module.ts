@@ -12,12 +12,14 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 
 import { CategorieService } from './../service/categorie.service';
+import { ImageViewComponent } from './image-view/image-view.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
-		ContentComponent
+		ContentComponent,
+		ImageViewComponent
 	],
 	imports: [
 		BrowserModule,

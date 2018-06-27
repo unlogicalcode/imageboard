@@ -1,21 +1,21 @@
 import { EntityService } from './entity.service';
 import { Injectable } from '@angular/core';
 
-import { Category } from '../entity/category';
+import { Image } from '../entity/image';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CategorieService implements EntityService {
+export class ImageService implements EntityService {
 
 	constructor() { }
 
-	public getAll(): Category[] {
-		return [new Category('New', '1'), new Category('Top', '2')];
+	public getAll(): Image[] {
+		return [new Image('1'), new Image('2')];
 	}
 
-	public get(id: string): Category {
-		return null;
+	public get(id: string): Image {
+		return new Image('1');
 	}
 
 	public delete(uuid: string) {
