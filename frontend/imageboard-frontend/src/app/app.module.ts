@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 
+import { CategorieService } from './../service/categorie.service';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -27,7 +29,9 @@ import { ContentComponent } from './content/content.component';
 		MatTabsModule,
 		MatInputModule
 	],
-	providers: [],
+	providers: [
+		CategorieService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
