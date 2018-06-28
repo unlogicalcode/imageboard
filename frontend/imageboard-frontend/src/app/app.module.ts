@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 // Angular-Material imports
 import { MatButtonModule, MatMenuModule, MatToolbarModule, MatTabsModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,7 +30,8 @@ import { ImageViewComponent } from './image-view/image-view.component';
 		MatMenuModule,
 		MatToolbarModule,
 		MatTabsModule,
-		MatInputModule
+		MatInputModule,
+		MatCardModule
 	],
 	providers: [
 		CategorieService

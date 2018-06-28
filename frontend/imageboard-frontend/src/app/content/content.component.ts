@@ -13,7 +13,7 @@ export class ContentComponent implements OnInit {
 	categories: Category[];
 
 	constructor(categorieService: CategorieService) {
-		this.categories = categorieService.getCategories();
+		this.categories = categorieService.getAll();
 	}
 
 	ngOnInit() {
