@@ -1,5 +1,5 @@
 <div class="image-view">
-	<mat-card *ngFor="let image of images">
-		<img src="{{image.url}}" width="300px" height="150px">
+	<mat-card *ngFor="let image of images" class="image">
+		<img mat-card-image src="{{image.url}}">
 	</mat-card>
 </div>
