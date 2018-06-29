@@ -1,5 +1,10 @@
 <div class="image-view">
 	<mat-card *ngFor="let image of images" class="image">
 		<img mat-card-image src="{{image.url}}">
+		<mat-card-content>
+			<span>VoteResult</span>
+			<span class="fill-empty-space"></span>
+			<span>NumberComments</span>
+		</mat-card-content>
 	</mat-card>
 </div>

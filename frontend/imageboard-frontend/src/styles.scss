@@ -1,15 +1,23 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
+	width: 100%;
 	margin: 0;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
 }
 
+.fill-empty-space {
+    flex: 1 1 auto;
+}
+
 .image-view {
+	flex: wrap;
+	justify-content: center;
 	margin: 1rem;
 }
 
 .mat-card {
 	margin: 1rem;
 	width: 310px !important;
+
 }
