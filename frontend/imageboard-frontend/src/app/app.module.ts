@@ -7,6 +7,7 @@ import { MatButtonModule, MatMenuModule, MatToolbarModule, MatTabsModule } from 
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -31,7 +32,8 @@ import { ImageViewComponent } from './image-view/image-view.component';
 		MatToolbarModule,
 		MatTabsModule,
 		MatInputModule,
-		MatCardModule
+		MatCardModule,
+		MatGridListModule
 	],
 	providers: [
 		CategorieService

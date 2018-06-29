@@ -18,6 +18,9 @@ body {
 
 .mat-card {
 	margin: 1rem;
-	width: 310px !important;
+	height: auto;
+}
 
+.mat-card img {
+	height: auto;
 }
