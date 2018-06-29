@@ -1,7 +1,7 @@
 <div class="content">
 	<mat-tab-group>
-		<mat-tab label="New">
+		<mat-tab *ngFor="let category of categories" label ="{{category.displayName}}">
+			<app-image-view [viewCategory]="category"></app-image-view>
 		</mat-tab>
-		<mat-tab label="Top"></mat-tab>
 	</mat-tab-group>
 </div>
