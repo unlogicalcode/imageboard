@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { Category } from './../../entity/category';
 import { Image } from './../../entity/image';
 import { ImageService } from '../../service/image.service';
@@ -9,7 +9,9 @@ import { ImageService } from '../../service/image.service';
 	styleUrls: ['./image-view.component.scss']
 })
 
-export class ImageViewComponent implements OnInit {
+export class ImageViewComponent implements OnInit, AfterViewInit {
+
+	columnNumber = 5;
 
 	@Input()
 	public viewCategory: Category;
@@ -21,6 +23,20 @@ export class ImageViewComponent implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+
+	ngAfterViewInit() {
+		this.calcColumnNumber();
+	}
+
+	calcColumnNumber() {
+		const width = window.innerWidth;
+		this.columnNumber = Math.trunc(width / 300);
+	}
+
+	@HostListener('window:resize', ['$event'])
+	onResize(event) {
+		this.calcColumnNumber();
 	}
 
 }
