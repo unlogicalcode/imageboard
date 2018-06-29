@@ -6,9 +6,19 @@ import { Category } from '../entity/category';
 @Injectable({
 	providedIn: 'root'
 })
-export class CategorieService implements EntityService {
+export class CategorieService extends EntityService {
 
-	constructor() { }
+	primaryCategory: Category;
+
+	constructor() {
+		super();
+		this.getAll().forEach(category => {
+			if (category.primary) {
+				this.primaryCategory = category;
+				return;
+			}
+		});
+	}
 
 	public getAll(): Category[] {
 		return [new Category('New', '1'), new Category('Top', '2')];
@@ -22,7 +32,16 @@ export class CategorieService implements EntityService {
 		return null;
 	}
 
-	public update(uuid: string) {
+	public update(category: Category) {
 		return null;
+	}
+
+	public setPrimary(uuid: string) {
+		const category: Category = this.get(uuid);
+		const oldPrimary = this.primaryCategory;
+		oldPrimary.setPrimary();
+		this.update(oldPrimary);
+		this.primaryCategory = category;
+		this.update(category);
 	}
 }

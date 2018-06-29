@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 // Angular-Material imports
 import { MatButtonModule, MatMenuModule, MatToolbarModule, MatTabsModule } from '@angular/material';
@@ -15,6 +16,7 @@ import { ContentComponent } from './content/content.component';
 
 import { CategorieService } from './../service/categorie.service';
 import { ImageViewComponent } from './image-view/image-view.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
 	declarations: [
@@ -26,6 +28,7 @@ import { ImageViewComponent } from './image-view/image-view.component';
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
+		RouterModule,
 		MatButtonModule,
 		MatIconModule,
 		MatMenuModule,
@@ -33,7 +36,8 @@ import { ImageViewComponent } from './image-view/image-view.component';
 		MatTabsModule,
 		MatInputModule,
 		MatCardModule,
-		MatGridListModule
+		MatGridListModule,
+		AppRoutingModule
 	],
 	providers: [
 		CategorieService
