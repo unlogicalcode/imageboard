@@ -24,14 +24,16 @@ export class AppRoutingModule {
 	}
 
 	generateRoutes(router: Router) {
+		//generate route foreach category, special handling for primary category
 		this.categories.forEach(category => {
 			if (!category.primary) {
 				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
-				
+				//TODO IMPLEMENT special handling for primary category
 			} else {
 				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
 			}
 		});
+		//display generated routes in console
 		router.config.forEach(route => {
 			console.log(route);
 		});
