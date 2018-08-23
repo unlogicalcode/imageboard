@@ -1,10 +1,11 @@
 import { CategorieService } from './../service/categorie.service';
 import { Category } from './../entity/category';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { ImageViewComponent } from './image-view/image-view.component';
 
 const routes: Routes = [
+	{path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -17,19 +18,22 @@ export class AppRoutingModule {
 
 	categories: Category[];
 
-	constructor(catService: CategorieService) {
+	constructor(catService: CategorieService, router: Router) {
 		this.categories = catService.getAll();
-		this.generateRoutes();
+		this.generateRoutes(router);
 	}
 
-	generateRoutes() {
+	generateRoutes(router: Router) {
 		this.categories.forEach(category => {
 			if (!category.primary) {
-				routes.concat([{path: category.displayName, component: ImageViewComponent}]);
+				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
+				
 			} else {
-				routes.concat([{path: category.displayName, component: ImageViewComponent}]);
-				routes.concat([{path: '', redirectTo: 'login', pathMatch: 'full'}]);
+				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
 			}
+		});
+		router.config.forEach(route => {
+			console.log(route);
 		});
 	}
 }

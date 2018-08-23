@@ -1,8 +1,9 @@
 <div class="content">
 	<mat-tab-group>
 		<mat-tab *ngFor="let category of categories" label ="{{category.displayName}}">
-			<app-image-view [viewCategory]="category"></app-image-view>
+			<router-outlet></router-outlet>
+			<!--<app-image-view [viewCategory]="category"></app-image-view>-->
 		</mat-tab>
 	</mat-tab-group>
-	<!--<router-outlet></router-outlet> https://angular.io/guide/router#fetch-data-before-navigating -->
+	<!--<router-outlet></router-outlet>  https://angular.io/guide/router#fetch-data-before-navigating -->
 </div>
