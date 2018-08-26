@@ -12,8 +12,7 @@ export class ContentComponent implements OnInit {
 
 	categories: Category[];
 
-	constructor(categorieService: CategorieService) {
-		this.categories = categorieService.getAll();
+	constructor() {
 	}
 
 	ngOnInit() {

@@ -2,6 +2,7 @@ import { EntityService } from './entity.service';
 import { Injectable } from '@angular/core';
 
 import { Image } from '../entity/image';
+import { Category } from '../entity/category';
 
 @Injectable({
 	providedIn: 'root'

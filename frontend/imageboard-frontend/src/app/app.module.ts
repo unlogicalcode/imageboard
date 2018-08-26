@@ -50,6 +50,9 @@ import { AppRoutingModule } from './/app-routing.module';
 	providers: [
 		CategorieService
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	entryComponents: [
+		ImageViewComponent
+	]
 })
 export class AppModule { }

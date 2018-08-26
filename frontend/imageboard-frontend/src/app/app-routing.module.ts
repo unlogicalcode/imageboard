@@ -5,7 +5,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { ImageViewComponent } from './image-view/image-view.component';
 
 const routes: Routes = [
-	{path: '', redirectTo: 'login', pathMatch: 'full'}
+	{path: '', redirectTo: 'login/', pathMatch: 'full'}
 ];
 
 @NgModule({

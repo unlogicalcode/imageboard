@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit, Input, ViewChild, HostListener, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from './../../entity/category';
 import { Image } from './../../entity/image';
 import { ImageService } from '../../service/image.service';
+import { CategorieService } from '../../service/categorie.service';
 
 @Component({
 	selector: 'app-image-view',
@@ -12,14 +14,20 @@ import { ImageService } from '../../service/image.service';
 export class ImageViewComponent implements OnInit, AfterViewInit {
 
 	columnNumber = 5;
+	selectedTab;
 
-	@Input()
+	categories: Category[];
+
 	public viewCategory: Category;
 
 	images: Image[];
 
-	constructor(imageService: ImageService) {
+	constructor(imageService: ImageService, categoryService: CategorieService, router: Router) {
+		this.categories = categoryService.getAll();
+		this.setViewCategory(router);
+		this.setTab();
 		this.images = imageService.getAll();
+		console.log(this.viewCategory);
 	}
 
 	ngOnInit() {
@@ -39,4 +47,16 @@ export class ImageViewComponent implements OnInit, AfterViewInit {
 		this.calcColumnNumber();
 	}
 
+	setViewCategory(router: Router) {
+		this.categories.forEach(category => {
+			let catPath = '/' + category.displayName.toLowerCase();
+			if(catPath == router.url) {
+				this.viewCategory = category;
+			}
+		});
+	}
+
+	setTab() {
+		console.log('tab:'+this.selectedTab);
+	}
 }
