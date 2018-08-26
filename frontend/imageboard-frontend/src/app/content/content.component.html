@@ -1,4 +1,13 @@
 <div class="content">
+	<nav mat-tab-nav-bar>
+		<a mat-tab-link 
+			*ngFor="let category of categories" 
+			[routerLink]="[category.displayName.toLowerCase()]"
+			routerLinkActive #rla="routerLinkActive"
+			 [active]="rla.isActive">
+		{{category.displayName}}
+		</a>
+	</nav>
 	<router-outlet></router-outlet>
 	<!--<router-outlet></router-outlet>  https://angular.io/guide/router#fetch-data-before-navigating -->
 </div>

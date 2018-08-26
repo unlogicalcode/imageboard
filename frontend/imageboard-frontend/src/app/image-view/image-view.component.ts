@@ -13,6 +13,8 @@ import { CategorieService } from '../../service/categorie.service';
 
 export class ImageViewComponent implements OnInit, AfterViewInit {
 
+	router: Router;
+
 	columnNumber = 5;
 	selectedTab;
 
@@ -23,14 +25,16 @@ export class ImageViewComponent implements OnInit, AfterViewInit {
 	images: Image[];
 
 	constructor(imageService: ImageService, categoryService: CategorieService, router: Router) {
+		this.router = router;
 		this.categories = categoryService.getAll();
 		this.setViewCategory(router);
-		this.setTab();
 		this.images = imageService.getAll();
-		console.log(this.viewCategory);
 	}
 
 	ngOnInit() {
+		this.router.events.subscribe((res) => {
+			console.log(res);
+		});
 	}
 
 	ngAfterViewInit() {
@@ -54,9 +58,5 @@ export class ImageViewComponent implements OnInit, AfterViewInit {
 				this.viewCategory = category;
 			}
 		});
-	}
-
-	setTab() {
-		console.log('tab:'+this.selectedTab);
 	}
 }
