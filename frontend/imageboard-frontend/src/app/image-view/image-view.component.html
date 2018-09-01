@@ -1,15 +1,16 @@
-{{this.viewCategory.displayName}}
 <div class="image-view">
 	<mat-grid-list cols="{{columnNumber}}" rowHeight="340px" #imageView>
 		<mat-grid-tile *ngFor="let image of images">
-			<mat-card class="image">
-				<img mat-card-image src="{{image.url}}">
-				<mat-card-content>
-					<span>VoteResult</span>
-					<span class="fill-empty-space"></span>
-					<span>NumberComments</span>
-				</mat-card-content>
-			</mat-card>
+			<a [routerLink]="[image.uuid]" routerLinkActive>
+				<mat-card class="image">
+					<img mat-card-image src="{{image.url}}">
+					<mat-card-content>
+						<span>VoteResult</span>
+						<span class="fill-empty-space"></span>
+						<span>NumberComments</span>
+					</mat-card-content>
+				</mat-card>
+			</a>
 		</mat-grid-tile>
 	</mat-grid-list>
 </div>

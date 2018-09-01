@@ -3,6 +3,7 @@ import { Category } from './../entity/category';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ImageViewComponent } from './image-view/image-view.component';
+import { ImageDetailComponent } from './image-detail/image-detail.component';
 
 const routes: Routes = [
 	{path: 'login', component: ImageViewComponent},
@@ -29,9 +30,11 @@ export class AppRoutingModule {
 		this.categories.forEach(category => {
 			if (!category.primary) {
 				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
+				router.config.unshift({path: category.displayName.toLowerCase()+'/:uuid', component: ImageDetailComponent});
 				//TODO IMPLEMENT special handling for primary category
 			} else {
 				router.config.unshift({path: category.displayName.toLowerCase(), component: ImageViewComponent});
+				router.config.unshift({path: category.displayName.toLowerCase()+'/:uuid', component: ImageDetailComponent});
 			}
 		});
 		//display generated routes in console

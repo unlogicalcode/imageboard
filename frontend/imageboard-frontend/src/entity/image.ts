@@ -16,7 +16,7 @@ export class Image implements Entity  {
 		Generates Random Image Url to see change in ImageView
 	*/
 	private generateUrl() {
-		let random: Boolean = Boolean(Math.round(Math.random()));
+		let random: Boolean = Boolean(Math.round(Math.random())); //generates random boolean value
 		if(random) this.url = 'https://www.probytes.net/wp-content/uploads/2018/01/2-768x552.jpg';
 		else this.url = 'https://www.bacancytechnology.com/blog/wp-content/uploads/2016/09/images1.jpg';
 	}

@@ -25,13 +25,15 @@ import { CategorieService } from './../service/categorie.service';
 
 //module imports
 import { AppRoutingModule } from './/app-routing.module';
+import { ImageDetailComponent } from './image-detail/image-detail.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
 		ContentComponent,
-		ImageViewComponent
+		ImageViewComponent,
+		ImageDetailComponent
 	],
 	imports: [
 		BrowserModule,
@@ -52,7 +54,8 @@ import { AppRoutingModule } from './/app-routing.module';
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [
-		ImageViewComponent
+		ImageViewComponent,
+		ImageDetailComponent
 	]
 })
 export class AppModule { }
