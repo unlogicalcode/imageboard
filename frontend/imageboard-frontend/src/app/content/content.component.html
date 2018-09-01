@@ -1,7 +1,13 @@
 <div class="content">
-	<mat-tab-group>
-		<mat-tab *ngFor="let category of categories" label ="{{category.displayName}}">
-			<app-image-view [viewCategory]="category"></app-image-view>
-		</mat-tab>
-	</mat-tab-group>
+	<nav mat-tab-nav-bar>
+		<a mat-tab-link 
+			*ngFor="let category of categories" 
+			[routerLink]="[category.displayName.toLowerCase()]"
+			routerLinkActive #rla="routerLinkActive"
+			 [active]="rla.isActive">
+		{{category.displayName}}
+		</a>
+	</nav>
+	<router-outlet></router-outlet>
+	<!--<router-outlet></router-outlet>  https://angular.io/guide/router#fetch-data-before-navigating -->
 </div>

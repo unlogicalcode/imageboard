@@ -1,0 +1,19 @@
+<mat-card class="image">
+	<img mat-card-image src="{{image.url}}" id="detail-image" class="detail-image center">
+	<mat-card-content>
+	<div class="tags">
+		<!-- TODO: Tab Section -->
+	</div> 
+	<mat-divider></mat-divider>
+	<div class="comments">
+		<div class="comments-input full-width">	
+			<mat-form-field>
+				<textarea matInput cdkTextareaAutosize placeholder="Comment"></textarea>
+			</mat-form-field> 
+			<button mat-icon-button class="button-send">
+					<mat-icon>send</mat-icon>
+			</button>
+		</div>
+	</div>
+	</mat-card-content>
+</mat-card>
