@@ -1,15 +1,32 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+//genral global styling
 body {
 	width: 100%;
 	margin: 0;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
 }
 
+//Utitlity classes
 .fill-empty-space {
     flex: 1 1 auto;
 }
 
+.full-width {
+	width: 100%;
+}
+
+.notshow-link {
+	text-decoration: none;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//Common classes
 .image-view {
 	flex: wrap;
 	justify-content: center;
