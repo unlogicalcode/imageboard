@@ -25,10 +25,11 @@ export class ImageViewComponent implements OnInit, AfterViewInit {
 	constructor(imageService: ImageService, categoryService: CategorieService, router: Router) {
 		this.categories = categoryService.getAll();
 		this.setViewCategory(router);
-		this.images = imageService.getAll();
+		this.getImagesOfCategory(imageService);
 		router.events.subscribe(event => {
 			if(event instanceof NavigationEnd) {
 				this.setViewCategory(router);
+				this.getImagesOfCategory(imageService);
 			}
 		});
 	}
@@ -54,11 +55,13 @@ export class ImageViewComponent implements OnInit, AfterViewInit {
 	setViewCategory(router: Router) {
 		this.categories.forEach(category => {
 			let catPath = '/' + category.displayName.toLowerCase();
-			console.log(catPath + ' vs ' + router.url);
 			if(catPath == router.url) {
 				this.viewCategory = category;
-				console.log(this.viewCategory);
 			}
 		});
+	}
+	
+	getImagesOfCategory(imageService: ImageService) {
+		this.images = imageService.getAllOfCategory(this.viewCategory);
 	}
 }
